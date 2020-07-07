@@ -1,0 +1,40 @@
+{
+  "name": "react-native-schedule-hours",
+  "version": "1.0.0",
+  "description": "Componente para agendamento",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netconvdelivery/react-native-schedule-hours.git"
+  },
+  "dependencies": {
+    "moment": "^2.27.0",
+    "react-native-calendar-strip": "^2.0.6"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.5.1",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "react-test-renderer": "16.11.0"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "Lucas Diniz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/netconvdelivery/react-native-schedule-hours/issues"
+  },
+  "homepage": "https://github.com/netconvdelivery/react-native-schedule-hours#readme"
+}
