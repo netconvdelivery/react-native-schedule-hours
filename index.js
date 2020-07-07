@@ -89,7 +89,6 @@ const ScheduleList = ({
     ? styleItemsSelected
     : styles.itemHourTextSelected;
   return (
-    <View style={{backgroundColor: 'white'}}>
       <Modal animationType="slide" transparent={true} visible={visible}>
         <View style={styles.container}>
           <View style={styles.body}>
@@ -138,7 +137,6 @@ const ScheduleList = ({
           </View>
         </View>
       </Modal>
-    </View>
   );
 };
 
