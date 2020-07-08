@@ -1,10 +1,10 @@
 {
   "name": "react-native-schedule-hours",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Componente para agendamento",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "moment": "^2.27.0",
+    "react": "^16.13.1",
+    "react-native": "^0.62.2",
     "react-native-calendar-strip": "^2.0.6"
   },
   "peerDependencies": {
