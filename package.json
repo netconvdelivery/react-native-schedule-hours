@@ -1,6 +1,6 @@
 {
   "name": "react-native-schedule-hours",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Componente para agendamento",
   "main": "index.js",
   "scripts": {
@@ -13,8 +13,7 @@
   "dependencies": {
     "moment": "^2.27.0",
     "react": "^16.13.1",
-    "react-native": "^0.62.2",
-    "react-native-calendar-strip": "^2.0.6"
+    "react-native": "^0.62.2"
   },
   "peerDependencies": {
     "react": "*",
