@@ -1,6 +1,6 @@
 {
   "name": "react-native-schedule-hours",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "description": "Componente para agendamento",
   "main": "index.js",
   "scripts": {
@@ -11,9 +11,7 @@
     "url": "git+https://github.com/netconvdelivery/react-native-schedule-hours.git"
   },
   "dependencies": {
-    "moment": "^2.27.0",
-    "react": "^16.13.1",
-    "react-native": "^0.62.2"
+    "moment": "^2.27.0"
   },
   "peerDependencies": {
     "react": "*",
