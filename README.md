@@ -16,5 +16,9 @@ npm install react-native-schedule-hours
 ```python
 import ScheduleHours from 'react-native-schedule-hours';
 
-<ScheduleHours visible={true} items={[8, 9, 10, 11, 12, 17, 18, 19, 20]} />
+  const handleSelectHour = (hour) => {
+   console.log(hour)
+  };
+
+<ScheduleHours visible={true} items={[8, 9, 10, 11, 12, 17, 18, 19, 20]} onSelectHour={handleSelectHour} />
 ```
