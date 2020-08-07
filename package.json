@@ -1,6 +1,6 @@
 {
   "name": "react-native-schedule-hours",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "Componente para agendamento",
   "main": "index.js",
   "scripts": {

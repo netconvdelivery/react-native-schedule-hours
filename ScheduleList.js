@@ -21,10 +21,11 @@ const ScheduleList = ({
   items,
   visible,
 }) => {
-  const [selectHour, setHour] = useState();
+  const [selectHour, setHour] = useState({});
   const [hours, setHours] = useState([]);
 
-  const handleSelectHour = (hour) => {
+  const handleSelectHour = hour => {
+    console.log(hour);
     setHour(hour);
     onSelectHour(hour);
   };
@@ -34,10 +35,14 @@ const ScheduleList = ({
     setHours(mapItems);
   };
 
-  const formatHour = async (hour) => {
+  const formatHour = hour => {
     let time = moment();
-    time.set({ hour: hour, minute: 0, second: 0, millisecond: 0 });
-    return time.format("HH:mm");
+    time.set({hour: hour, minute: 0, second: 0, millisecond: 0});
+    return time.format('HH:mm');
+  };
+
+  const isSelected = hour => {
+    return hour.min === selectHour.min && hour.max === selectHour.max;
   };
 
   useEffect(() => {
@@ -46,52 +51,51 @@ const ScheduleList = ({
 
   const styleItemHour = styleItems
     ? styleItems
-    : styles({ headerColor }).itemHour;
+    : styles({headerColor}).itemHour;
   const styleItemHourSelected = styleItems
     ? styleItemsSelected
-    : styles({ headerColor }).itemHourSelected;
+    : styles({headerColor}).itemHourSelected;
   const styleItemHourText = styleItemsText
     ? styleItemsText
-    : styles({ headerColor }).itemHourText;
+    : styles({headerColor}).itemHourText;
   const styleItemHourTextSelected = styleItems
     ? styleItemsSelected
-    : styles({ headerColor }).itemHourTextSelected;
+    : styles({headerColor}).itemHourTextSelected;
   return (
     <Modal animationType="slide" transparent={true} visible={visible}>
-      <View style={styles({ headerColor }).container}>
-        <View style={styles({ headerColor }).body}>
-          <View style={styles({ headerColor }).header}>
-            <Text style={styles({ headerColor }).titleHeader}>
-              {moment().format("DD [de] MMMM [de] YYYY")}
+      <View style={styles({headerColor}).container}>
+        <View style={styles({headerColor}).body}>
+          <View style={styles({headerColor}).header}>
+            <Text style={styles({headerColor}).titleHeader}>
+              {moment().format('DD [de] MMMM [de] YYYY')}
             </Text>
           </View>
           {hours.length === 0 ? (
             <View style={styles.contentAlert}>
-              <Text style={styles({ headerColor }).title}>
+              <Text style={styles({headerColor}).title}>
                 Lista de horários está vazia.
               </Text>
             </View>
           ) : (
             <>
               <ScrollView>
-                <View style={styles({ headerColor }).contentChip}>
-                  {hours.map(({ min, max }) => (
+                <View style={styles({headerColor}).contentChip}>
+                  {hours.map(({min, max}) => (
                     <TouchableOpacity
-                      onPress={() => handleSelectHour({ min, max })}
+                      onPress={() => handleSelectHour({min, max})}
                       style={[
                         styleItemHour,
-                        max.substring(0, 2) < moment().format("HH") &&
-                          styles({ headerColor }).styleItemHourDisable,
-                        selectHour === { min, max } && styleItemHourSelected,
-                      ]}
-                    >
+                        max < moment().format('HH') &&
+                          styles({headerColor}).styleItemHourDisable,
+                        isSelected({min, max}) && styleItemHourSelected,
+                      ]}>
+                      {console.log(selectHour == {min, max})}
                       <Text
                         style={
-                          selectHour === { min, max }
+                          isSelected({min, max})
                             ? styleItemHourTextSelected
                             : styleItemHourText
-                        }
-                      >
+                        }>
                         {formatHour(min)} ~ {formatHour(max)}
                       </Text>
                     </TouchableOpacity>
@@ -99,7 +103,7 @@ const ScheduleList = ({
                 </View>
               </ScrollView>
               <View>
-                <Text style={styles({ headerColor }).title}>
+                <Text style={styles({headerColor}).title}>
                   Tempo de espera em torno de 25 minutos.
                 </Text>
               </View>
